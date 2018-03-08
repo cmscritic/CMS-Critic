@@ -1,79 +1,88 @@
-[![](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/netlify/netlifycms)
+# "Affiliates" - Jekyll Template by WowThemes.net
 
-# Jekyll + Netlify CMS with Netlify Identity
+[Live Demo](https://wowthemesnet.github.io/affiliates-jekyll-theme/) &nbsp; &nbsp; [Download](https://github.com/wowthemesnet/affiliates-jekyll-theme/archive/master.zip)
 
-This is the basic Jekyll starter site, with Netlify CMS integrated and using Netlify Identity for
-authentication.
+![enter image description here](assets/images/theme1.jpg)
 
-## Getting started
+### Features
 
-Use our deploy button to get your own copy of the repository:
+- Built for Jekyll
+- Compatible with Github pages
+- Featured Posts
+- Index Pagination
+- Post Share
+- Post Categories
+- Prev/Next Link
+- Category Archives (this is not yet compatible with github pages though)
+- Jumbotron Categories
+- Integrations:
+    - Disqus Comments
+    - Google Analaytics
+    - Mailchimp Integration
+    - Formspree.io Contact
+    - ShareThis Integration
+- Design Features:
+    - Bootstrap v4.0.0-alpha.6
+    - Font Awesome
+    - Masonry
+- Layouts:
+    - Default
+    - Post
+    - Page
+    - Archive
+    
+### How to Use
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/jekyll-netlify-cms&stack=cms)
+If you aren't familiar with Jekyll yet, you should know that it is a static site generator. It will transform your plain text into static websites and blogs. No more databases, slow loading websites, risk of being hacked...just your content. And not only that, with Jekyll you get free hosting with GitHub Pages! This page itself is free hosted on Github with the help of Jekyll and Affiliates template that you're currently previewing. If you are a beginner we recommend you start with [Jekyll's Docs](https://jekyllrb.com/docs/installation/). Now if you know how to use Jekyll, let's move on to using Affiliates template in Jekyll:
 
-This will setup everything needed for running the CMS:
+### Using Affiliates template with Jekyll
 
-* A new repository in your GitHub account with the code
-* Full Continuous Deployment to Netlify's global CDN network
-* Control users and access with Netlify Identity
-* Manage content with Netlify CMS
+Download or Fork *Affiliates for Jekyll*. 
+- In your local project, open <code>_config.yml</code>. Set your <code>baseurl</code>, your Google Analytics code, Disqus username, Authors, Mailchimp, ShareThis code (https://www.sharethis.com/) etc.
+- Affiliates requires 2 plugins: 
+    - <code>$ gem install jekyll-paginate</code>
+    - <code>$ gem install jekyll-archives</code>.
+    - Edit the header & footer in <code>default.html</code>.  Edit home in <code>index.html</code>. Edit the contact form in <code>contact.html</code> (https://formspree.io/).
+- Start blogging by adding your .md files in <code>_posts</code>. If you download the template you will notice it already has a few as an example. 
+- YAML front matter
+    - post featured - <code>featured:true</code>
+    - post featured image - <code>image: assets/images/mypic.jpg</code>
+    - page comments - <code>comments:true</code>
+    - meta description (optional) - <code>description: "this is my meta description"</code>
+    
+YAML Post Example:
+<pre>
+---
+layout: post
+title:  "We all wait for summer"
+author: john
+categories: [ Jekyll, tutorial ]
+image: assets/images/5.jpg
+featured: true
+---
+</pre>
 
-The email address associated with your Netlify account will receive an email inviting you as an
-Identity user - click Accept in the email to set your new password, then navigate to `/admin` on
-your site to log in.
+YAML Page Example
+<pre>
+---
+layout: page
+title: Affiliates Template for Jekyll
+comments: true
+---
+</pre>
 
-Now you're all set, and you can start editing content!
+### Copyright
 
-**Note:** if you switch the repo that was created to private, you'll need to regenerate your token,
-as the token generated using the deploy to Netlify button can only access public repositories. To
-regenerate your token, head to "Settings" in your Netlify site dashboard, go to the "Identity"
-section, then scroll to "Services" where you'll see an "Edit settings" button. Click that and you'll
-see a text link to "Generate access token in GitHub".
+Copyright (C) 2018 WowThemes.net.
 
-## Local Development
+**Affiliates for Jekyll** is designed by [Sal](https://www.wowthemes.net) and it is licensed MIT. If this project helps you reduce time to develop or you want to remove the attribution credit, you can give me a cup of coffee :)
 
-Clone this repository and run:
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/wowthemes/5)
 
-```bash
-bundle install
-bundle exec jekyll server --watch
-```
+-----------------
 
-Now navigate to [localhost:4000](http://localhost:4000/) to preview the site, and
-[localhost:4000/admin](http://localhost:4000/admin) to log into the CMS.
+## Contribute
 
-## Authenticating without Netlify Identity
-
-Netlify provides basic OAuth so you can log in to Netlify CMS with your GitHub profile directly if
-you prefer not to use Netlify Identity. To do so, go to [the GitHub developer application
-screen](https://github.com/settings/developers) and **register new application**. The Authorization
-callback URL you'll need to enter is `https://api.netlify.com/auth/done`. 
-
-Once you've set up the application, go back to your Netlify site dashboard, navigate to the
-**Access** tab. Then fill in your new Client ID and Client Secret in the Github Authentication
-Provider section and check the **Enable GitHub** box.
-
-You'll then need to update the `backend` settings at the top of the `admin/config.yml` file in your
-site repo:
-
-```yaml
-backend:
-  name: github
-  repo: username/repo # your GitHub username and repository name, separated by a slash
-  branch: master # optional, default value is "master"
-```
-
-Now anybody with write access to your GitHub repository can log in at yoursite.netlify.com/admin
-and use the CMS.
-
-**Enjoy!**
-
-## Bug reports, feature requests, etc
-
-We love feedback, contributions, better documentation, tutorials, general comments,
-random hatemail, rants, love, crazy ideas, etc, etc!
-
-Contact us at [any of netlify's normal channels](https://www.netlify.com/contact) and
-open issues or pull requests for Netlify CMS at [the netlify-cms GitHub
-repo](https://github.com/netlify/netlify-cms). If you need realtime help with setting up Netlify
-CMS, you can reach out in the [Netlify CMS Gitter](https://gitter.im/netlify/netlifycms).
+- Clone the repo.
+- Create a branch off of master and give it a meaningful name (e.g. my-new-affiliates-feature).
+- Open a pull request on GitHub and describe the feature or fix.
